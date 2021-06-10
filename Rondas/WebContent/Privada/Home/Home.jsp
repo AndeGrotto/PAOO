@@ -6,7 +6,8 @@
 <meta charset="ISO-8859-1">
 <title>Insert title here</title>
 </head>
-<body>	
+<body>
+	<jsp:include page="../fragmentos/Cabecalho.jsp"></jsp:include>	
 	<br>
 	<br>
 	<br>

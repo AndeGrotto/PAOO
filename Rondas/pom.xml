@@ -41,6 +41,14 @@
 		<groupId>org.postgresql</groupId>
 		<artifactId>postgresql</artifactId>
 		<version>42.2.5</version>
+	</dependency>
+	
+	<dependency>
+		<groupId>net.iamvegan</groupId>
+		<artifactId>multipartrequest</artifactId>
+		<version>1.0</version>			
+		<scope>system</scope>
+		<systemPath>${project.basedir}/WebContent/WEB-INF/lib/multipartrequest.jar</systemPath>
 	</dependency> 
   </dependencies>
 </project>

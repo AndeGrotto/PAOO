@@ -36,7 +36,7 @@ a {
 
 h2 {
   text-align: center;
-  font-size: 36px;
+  font-size: 56px;
   font-weight: 600;
   text-transform: uppercase;
   display:inline-block;
