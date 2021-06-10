@@ -35,8 +35,6 @@ public class Locomocao implements Serializable {
 	}
 
 
-
-
 	public Long getId() {
 		return this.id;
 	}

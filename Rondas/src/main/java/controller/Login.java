@@ -31,11 +31,11 @@ public class Login implements Filter {
 	   HttpSession sessao = httpRequest.getSession(); 
 	   String contextPath = httpRequest.getContextPath();
 	   
-	   Usuario usuarioLogado = (Usuario) sessao.getAttribute("usuarioLogado"); // pegar da sessão usuário deixado quando autentica com sucesso 
+	   Usuario usuarioLogado = (Usuario) sessao.getAttribute("usuarioLogado");
 	   if (usuarioLogado == null){ 
-		   httpResponse.sendRedirect(contextPath + "/Login.jsp"); // redirecionar para login - acesso não permitido 
+		   httpResponse.sendRedirect(contextPath + "/Login.jsp");
 	   } else { 
-		   chain.doFilter(request, response); // deixar seguir
+		   chain.doFilter(request, response); 
 	   }
 	}
 	
@@ -47,14 +47,12 @@ public class Login implements Filter {
      * Default constructor. 
      */
     public Login() {
-        // TODO Auto-generated constructor stub
     }
 
 	/**
 	 * @see Filter#destroy()
 	 */
 	public void destroy() {
-		// TODO Auto-generated method stub
 	}
 
 	
@@ -62,7 +60,6 @@ public class Login implements Filter {
 	 * @see Filter#init(FilterConfig)
 	 */
 	public void init(FilterConfig fConfig) throws ServletException {
-		// TODO Auto-generated method stub
 	}
 
 }
