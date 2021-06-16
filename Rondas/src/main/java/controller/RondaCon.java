@@ -132,16 +132,16 @@ public class RondaCon extends HttpServlet {
 	private void gravar(HttpServletRequest request, HttpServletResponse response) {
 		EntityManager em = JpaUtil.getEntityManager();
 		
-		Date i = null;
+		/*Date i = null;
 		try {
-			i = new SimpleDateFormat("yyyy-MM-dd").parse(request.getParameter("dataHoraInicio"));
+			i = new SimpleDateFormat("dd-MM-yyyy").parse(request.getParameter("dataHoraInicio"));
 		} catch (ParseException e) {
 			e.printStackTrace();
 		}
 		
 		Date f = null;
 		try {
-			f = new SimpleDateFormat("yyyy-MM-dd").parse(request.getParameter("dataHoraFim"));
+			f = new SimpleDateFormat("dd-MM-yyyy").parse(request.getParameter("dataHoraFim"));
 
 		} catch (ParseException e) {
 			e.printStackTrace();
@@ -149,19 +149,22 @@ public class RondaCon extends HttpServlet {
 		
 		Date u = null;
 		try {
-			u = new SimpleDateFormat("yyyy-MM-dd").parse(request.getParameter("dataHoraUltima"));
+			u = new SimpleDateFormat("dd-MM-yyyy").parse(request.getParameter("dataHoraUltima"));
 
 		} catch (ParseException e) {
 			e.printStackTrace();
 		}
-		
+		*/
 		Ronda p = new Ronda(
 				    Long.parseLong(request.getParameter("id")),
-					i, 
-					f, 
+				    new Date(),
+				    new Date(),
+					//i, 
+					//f, 
 					Float.parseFloat(request.getParameter("latUltima")),
-					Float.parseFloat(request.getParameter("lonUltima")), 
-					u,
+					Float.parseFloat(request.getParameter("lonUltima")),
+					new Date(),
+					//u,
 					new ArrayList(), null);
 		// ----------------------------------------------------------------------------------
 		em.getTransaction().begin(); 	

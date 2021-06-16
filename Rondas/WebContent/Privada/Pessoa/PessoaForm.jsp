@@ -35,7 +35,7 @@
 			<div class="row">
 				<div class="col-md-2">
 			        <label>Senha</label>
-			        <input class="form-control"  type="number" name="senha" value="${obj.senha}">			
+			        <input class="form-control"  type="password" name="senha" value="${obj.senha}">			
 				</div>
 			</div>
 	

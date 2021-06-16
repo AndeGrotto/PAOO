@@ -14,7 +14,7 @@
 	
 </head>
 <body>
-	<jsp:include page="../fragmentos/Cabecalho.jsp"></jsp:include>
+		<jsp:include page="../fragmentos/Cabecalho.jsp"></jsp:include>
 	
 		<script type="text/javascript">
 	    function confirmar(){
@@ -47,20 +47,18 @@
 	</script>
 	
 	
-	<h1>LISTAGEM DE RONDAS</h1>
+	<h1>LISTAGEM DE PESSOAS</h1>
 	
-	<form action="RondaCon">
+	<form action="PessoaCon">
 		<button type="submit" name="incluir"><i class="fas fa-plus-circle"></i> Incluir</button>
 		
 		<table border="1" class="table table-hover table-condensed">
 		    <thead>
 		       <tr>
 		           <td>Id</td>
-		           <td>dataHoraInicio</td>
-		           <td>dataHoraFim</td>
-		           <td>latUltima</td>
-		           <td>lonUltima</td>
-		           <td>dataHoraUltima</td>
+		           <td>Nome</td>
+		           <td>LoginApp</td>
+		           <td>Senha</td>
 		           <td></td>
 		           <td></td>
 		       </tr>
@@ -68,14 +66,9 @@
 			<c:forEach items="${lista}" var="p" varStatus="cont">
 			   <tr>
 			      <td>${p.id}</td>
-			      <td>${p.dataHoraInicio}</td>    
-			      <td>${p.dataHoraFim}</td>
-			      <td>${p.latUltima}</td>
-			      <td>${p.lonUltima}</td>
-			      <td>${p.dataHoraUltima}</td>
-			      
-			      <td><button type="submit" name="vigilantes" value="${p.id}">Vigilantes</button></td>
-			      
+			      <td>${p.nome}</td>    
+			      <td>${p.loginApp}</td>
+			      <td>${p.senha}</td>
 			      <td><button type="submit" name="alterar" value="${p.id}">Alterar</button></td>
 			      <td><button type="button" onclick="confirmar()" id="excluir" name="excluir" value="${p.id}">Excluir</button></td>
 			   </tr>

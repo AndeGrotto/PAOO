@@ -34,19 +34,10 @@
 	    <li><a href="#">Cadastros</a>
 	      <ul>
 	        <li><a href="../Ronda/RondaCon">Rondas</a></li>
-	        <li><a href="../Pessoa/PessoaCon">Pessoas</a></li>
-	        <li><a href="../Cidade/CidadeCon">Cidades</a></li>
-	        
-	        <li><a href="#">Básicos</a>
-	          <ul>
-	            <li><a href="#">Estado ...</a></li>
-	            <li><a href="http://vadikom.com/projects/">Projects</a></li>
+	        <li><a href="../Pessoa/PessoaCon">Pessoas</a></li>	        
 	          </ul>
 	        </li>
 	      </ul>
-	    </li>
-	    <li><a href="#">Sair</a></li>
-	  </ul>
 	</nav>
 
 
