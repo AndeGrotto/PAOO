@@ -1,10 +1,9 @@
 package controller;
 
 import java.io.IOException;
-import java.sql.Date;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
-import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 
 import javax.persistence.EntityManager;
@@ -18,7 +17,9 @@ import JPA.JpaUtil;
 import model.Localizacao;
 import net.iamvegan.multipartrequest.HttpServletMultipartRequest;
 
-
+/**
+ * Servlet implementation class LocalizacaoCon
+ */
 @WebServlet("/Privada/Localizacao/LocalizacaoCon")
 public class LocalizacaoCon extends HttpServlet {
 	private static final long serialVersionUID = 1L;
@@ -46,12 +47,11 @@ public class LocalizacaoCon extends HttpServlet {
 		} else if (request.getParameter("gravar") != null) {
 			gravar(request, response);			
 		} else if (request.getParameter("cancelar") != null) {
-			cancelar(request, response);				
+			cancelar(request, response);			
 		} else {
 			listar(request, response);
-		}
-		
-	}		
+		}		
+	}
 
 	private void listar(HttpServletRequest request, HttpServletResponse response) {
 		try {
@@ -74,31 +74,30 @@ public class LocalizacaoCon extends HttpServlet {
 		
 		Date f = null;
 		try {
-			f = (Date) new SimpleDateFormat("dd-mm-yyyy").parse(request.getParameter("dataHora"));
+			f = new SimpleDateFormat("dd-MM-yyyy").parse(request.getParameter("dataHora"));
 
 		} catch (ParseException e) {
 			e.printStackTrace();
 		}
 		
 		Localizacao l = new Localizacao(
-					Long.parseLong(request.getParameter("id")), 
-					f,
-					Float.parseFloat(request.getParameter("lat")), 
-					Float.parseFloat(request.getParameter("lon"))
-					);
-					// ----------------------------------------------------------------------------------
-				em.getTransaction().begin();
-					em.merge(l); 					
+			    Long.parseLong(request.getParameter("id")),
+			    f,
+				Float.parseFloat(request.getParameter("lat")),
+				Float.parseFloat(request.getParameter("lon")));
+		// ----------------------------------------------------------------------------------
+		em.getTransaction().begin(); 	
+		em.merge(l); 					
 		em.getTransaction().commit(); 	
 		em.close();
 		listar(request, response);
 	}
 
 	private void excluir(HttpServletRequest request, HttpServletResponse response) {
-		EntityManager em = JpaUtil.getEntityManager();
-		em.getTransaction().begin(); 
-		em.remove(em.find(Localizacao.class, Integer.parseInt(request.getParameter("excluir"))));
-		em.getTransaction().commit();
+		EntityManager em = JpaUtil.getEntityManager(); 
+		em.getTransaction().begin(); 	
+		em.remove(em.find(Localizacao.class, Integer.parseInt(request.getParameter("excluir"))));	
+		em.getTransaction().commit(); 
 		em.close();
 		listar(request, response);
 	}
@@ -125,8 +124,10 @@ public class LocalizacaoCon extends HttpServlet {
 		} 		
 	}
 
+	/**
+	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
+	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
 		doGet(request, response);
 	}
 

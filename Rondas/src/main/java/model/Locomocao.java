@@ -25,8 +25,6 @@ public class Locomocao implements Serializable {
 	}   
 	
 	
-	
-	
 	public Locomocao(Long id, String descricao, String placa) {
 		super();
 		this.id = id;

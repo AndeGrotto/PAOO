@@ -26,6 +26,10 @@ public class Localizacao implements Serializable {
 	
 	
 	private static final long serialVersionUID = 1L;
+	
+	public Localizacao() {
+		super();
+	}   
 
 	public Localizacao(Long id, Date dataHora, Float lat, Float lon, Ronda ronda) {
 		super();
@@ -35,7 +39,7 @@ public class Localizacao implements Serializable {
 		this.lon = lon;
 		this.ronda = ronda;
 	}
-	
+
 
 	public Long getId() {
 		return this.id;
@@ -71,4 +75,5 @@ public class Localizacao implements Serializable {
 	public void setRonda(Ronda ronda) {
 		this.ronda = ronda;
 	}
+
 }

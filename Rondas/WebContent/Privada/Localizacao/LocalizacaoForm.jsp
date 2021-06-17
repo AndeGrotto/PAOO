@@ -18,12 +18,6 @@
 				</div>
 			</div>
 	
-			<div class="row">
-				<div class="col-md-5">
-			        <label>DataHora</label>
-			        <input class="form-control"  type="date" name="dataHora" value="${obj.dataHora}">			
-				</div>
-			</div>
 			
 			<div class="row">
 				<div class="col-md-5">
